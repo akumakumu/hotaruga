@@ -1,19 +1,20 @@
-from dotenv import load_dotenv
-import os
-
 from kafka import KafkaProducer
 
-load_dotenv()
+producer = KafkaProducer(
+    bootstrap_servers='10.11.13.81:9092',
+    value_serializer=lambda v: str(v).encode('utf-8')  # Assuming the message is a string
+)
 
-ip_addr = os.getenv("IP_ADDR")
-port = os.getenv("PORT")
+topic_name = 'yytest'
 
-bootstrap_servers = '10.11.13.81:9092'
-producer = KafkaProducer(bootstrap_servers=bootstrap_servers)
+try:
+    message_value = "Hello, Mom!"
+    producer.send(topic_name, value=message_value)
+    print(f"Produced message: {message_value}")
 
-topic = 'yy_test'
-key = b'tweet'  # Optional: If you want to specify a key for the message
-value = b'Hello, mom!'  # The actual message content
+except Exception as e:
+    print(f"Error producing message: {e}")
 
-producer.send(topic, key=key, value=value)
-producer.close()
+finally:
+    producer.flush()
+    producer.close()

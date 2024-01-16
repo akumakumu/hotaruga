@@ -1,7 +1,7 @@
 // CREATE TOPIC
-bin/kafka-topics.sh \
+./kafka-topics.sh \
 --create \
---topic yy_test \
+--topic yytest \
 --bootstrap-server localhost:9092
 
 // LISTING TOPIC
@@ -9,6 +9,17 @@ bin/kafka-topics.sh \
 --list \
 --zookeeper localhost:2181
 
-bin/kafka-topics.sh \
+./kafka-topics.sh \
 --bootstrap-server=localhost:9092 \
 --list
+
+// PRODUCER
+./kafka-console-producer.sh \
+--topic yytest \
+--bootstrap-server localhost:9092
+
+// LISTENER
+./kafka-console-consumer.sh \
+--topic yytest \
+--from-beginning \
+--bootstrap-server localhost:9092

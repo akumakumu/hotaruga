@@ -3,11 +3,11 @@ adduser kafka sudo
 su - kafka
 
 apt update && apt install -y default-jre default-jdk
-wget https://downloads.apache.org/kafka/3.6.1/kafka-3.6.1-src.tgz
+wget https://downloads.apache.org/kafka/3.6.1/kafka_2.13-3.6.1.tgz
 
 mkdir /opt/kafka
 chown kafka /opt/kafka
-tar -xf kafka_3.6.1-src.tgz -C /opt/kafka --strip-components 1
+tar -xf kafka_2.13-3.6.1.tgz -C /opt/kafka --strip-components 1
 
 cd /opt/kafka
 ./gradlew jar -PscalaVersion=2.13.11

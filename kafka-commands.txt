@@ -1,0 +1,14 @@
+// CREATE TOPIC
+bin/kafka-topics.sh \
+--create \
+--topic yy_test \
+--bootstrap-server localhost:9092
+
+// LISTING TOPIC
+bin/kafka-topics.sh \
+--list \
+--zookeeper localhost:2181
+
+bin/kafka-topics.sh \
+--bootstrap-server=localhost:9092 \
+--list

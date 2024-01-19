@@ -23,3 +23,9 @@
 --topic yytest \
 --from-beginning \
 --bootstrap-server localhost:9092
+
+// CHECKING GROUP ID
+./kafka-consumer-groups.sh \
+--bootstrap-server localhost:9092 \
+--describe \
+--group yy

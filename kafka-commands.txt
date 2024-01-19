@@ -37,7 +37,7 @@
 --bootstrap-server localhost:9092 \
 --group yy \
 --reset-offsets \
---topic yy-test \
+--topic yytest \
 --execute
 
 // CHANGING OFFSET SHIFTING

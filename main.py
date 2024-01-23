@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 
-from databases.pymongo_poll import KafkaConsumerWrapper
-from utils.kafka_consumer import MongoDBConnector
+from databases.pymongo_poll import MongoDBConnector
+from utils.kafka_consumer import KafkaConsumerWrapper
 
 import os
 import json

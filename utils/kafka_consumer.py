@@ -1,5 +1,4 @@
 from kafka import KafkaConsumer
-import json
 
 class KafkaConsumerWrapper:
     def __init__(self, bootstrap_servers, group_id, auto_offset_reset):

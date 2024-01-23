@@ -1,9 +1,18 @@
 import json
 
+# Object to JSON
 x = {
     "url": "https://x.com/2",
     "title": "Hello, two",
     "sentiment": True
 }
 
-print(json.dumps(x))
+y = json.dumps(x)
+
+print(y)
+
+# JSON to Object
+
+z = json.loads(y)
+
+print(z["url"])

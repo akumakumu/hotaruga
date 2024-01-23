@@ -5,13 +5,13 @@ producer = KafkaProducer(
     value_serializer=lambda v: str(v).encode('utf-8')
 )
 
-topic_name = 'yytest'
+topic_name = 'jsontest'
 
 import json
 
 jsonMessage = {
-    "url": "https://x.com/2",
-    "title": "Hello, two",
+    "url": "https://x.com/3",
+    "title": "Hello, three",
     "sentiment": True
 }
 

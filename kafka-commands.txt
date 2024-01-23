@@ -40,6 +40,14 @@
 --topic yytest \
 --execute
 
+./kafka-consumer-groups.sh \
+--bootstrap-server localhost:9092 \
+--group yy \
+--reset-offsets \
+--to-earliest \
+--topic jsontest \
+--execute
+
 // CHANGING OFFSET SHIFTING
 ./kafka-consumer-groups.sh \
 --bootstrap-server localhost:9092 \

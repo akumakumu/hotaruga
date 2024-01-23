@@ -6,7 +6,7 @@ consumer = KafkaConsumer(
     auto_offset_reset='earliest'
 )
 
-consumer.subscribe(['yytest'])
+consumer.subscribe(['jsontest'])
 
 message = next(consumer)
 print(message.value.decode('utf-8'))

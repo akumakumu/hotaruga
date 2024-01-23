@@ -2,13 +2,21 @@ from kafka import KafkaProducer
 
 producer = KafkaProducer(
     bootstrap_servers='10.11.13.81:9092',
-    value_serializer=lambda v: str(v).encode('utf-8')  # Assuming the message is a string
+    value_serializer=lambda v: str(v).encode('utf-8')
 )
 
 topic_name = 'yytest'
 
+import json
+
+jsonMessage = {
+    "url": "https://x.com/2",
+    "title": "Hello, two",
+    "sentiment": True
+}
+
 try:
-    message_value = "Hello, Mom!"
+    message_value = json.dumps(jsonMessage)
     producer.send(topic_name, value=message_value)
     print(f"Produced message: {message_value}")
 

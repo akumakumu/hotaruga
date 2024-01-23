@@ -9,6 +9,6 @@ consumer = KafkaConsumer(
 consumer.subscribe(['yytest'])
 
 message = next(consumer)
-print(message.value)
+print(message.value.decode('utf-8'))
 
 consumer.close()

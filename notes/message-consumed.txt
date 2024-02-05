@@ -1,0 +1,16 @@
+ConsumerRecord(topic='jsontest', partition=0, offset=3, timestamp=1707116333845, timestamp_type=0, key=None, value=b'{"url": "https://x.com/1", "title": "Hello, one", "sentiment": true}', headers=[], checksum=None, serialized_key_size=-1, serialized_value_size=68, serialized_header_size=-1)
+
+ConsumerRecord(
+    topic='jsontest', 
+    partition=0, 
+    offset=3, 
+    timestamp=1707116333845, 
+    timestamp_type=0, 
+    key=None, 
+    value=b'{"url": "https://x.com/1", "title": "Hello, one", "sentiment": true}', 
+    headers=[], 
+    checksum=None, 
+    serialized_key_size=-1, 
+    serialized_value_size=68, 
+    serialized_header_size=-1
+    )

@@ -10,14 +10,17 @@ topic_name = 'jsontest'
 import json
 
 jsonMessage = {
-    "url": "https://x.com/3",
-    "title": "Hello, three",
+    "source": "twitter",
+    "url": "https://x.com/4",
+    "title": "Hello, four",
     "sentiment": True
 }
 
+header_name = [("source", b"twitter")]
+
 try:
     message_value = json.dumps(jsonMessage)
-    producer.send(topic_name, value=message_value)
+    producer.send(topic_name, value=message_value, headers=header_name)
     print(f"Produced message: {message_value}")
 
 except Exception as e:

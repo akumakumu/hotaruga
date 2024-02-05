@@ -1,11 +1,11 @@
 // CREATE TOPIC
-./kafka-topics.sh \
+/opt/kafka/bin/kafka-topics.sh \
 --create \
 --topic yytest \
 --bootstrap-server localhost:9092
 
 // LISTING TOPIC
-./kafka-topics.sh \
+/opt/kafka/bin/kafka-topics.sh \
 --list \
 --zookeeper localhost:2181
 
@@ -14,18 +14,18 @@
 --list
 
 // PRODUCER
-./kafka-console-producer.sh \
+/opt/kafka/bin/kafka-console-producer.sh \
 --topic yytest \
 --bootstrap-server localhost:9092
 
 // LISTENER
-./kafka-console-consumer.sh \
+/opt/kafka/bin/kafka-console-consumer.sh \
 --topic yytest \
 --from-beginning \
 --bootstrap-server localhost:9092
 
 // CHECKING GROUP ID
-./kafka-consumer-groups.sh \
+/opt/kafka/bin/kafka-consumer-groups.sh \
 --bootstrap-server localhost:9092 \
 --describe \
 --group yy
@@ -33,14 +33,7 @@
 // GROUP ID BEHAVIOR
 
 // RESETING OFFSET
-./kafka-consumer-groups.sh \
---bootstrap-server localhost:9092 \
---group yy \
---reset-offsets \
---topic yytest \
---execute
-
-./kafka-consumer-groups.sh \
+/opt/kafka/bin/kafka-consumer-groups.sh \
 --bootstrap-server localhost:9092 \
 --group yy \
 --reset-offsets \
@@ -49,7 +42,7 @@
 --execute
 
 // CHANGING OFFSET SHIFTING
-./kafka-consumer-groups.sh \
+/opt/kafka/bin/kafka-consumer-groups.sh \
 --bootstrap-server localhost:9092 \
 --group yy \
 --shift-by 1

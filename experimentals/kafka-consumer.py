@@ -1,5 +1,5 @@
 from dotenv import load_dotenv
-from pymongo import MongoClient
+# from pymongo import MongoClient
 from kafka import KafkaConsumer
 
 import os
@@ -11,9 +11,9 @@ myURI = os.getenv('URI')
 myPORT = os.getenv('PORT')
 myDB = os.getenv('DB')
 
-client = MongoClient(myURI, int(myPORT))
+# client = MongoClient(myURI, int(myPORT))
 
-db = client[myDB]
+# db = client[myDB]
 
 consumer = KafkaConsumer(
     bootstrap_servers='10.11.13.81:9092',
@@ -25,8 +25,10 @@ consumer.subscribe(['jsontest'])
 
 message = next(consumer)
 
-pointer = json.loads(message.value.decode('utf-8'))
+print(message)
 
-db.yytestdb.insert_one(pointer)
+# pointer = json.loads(message.value.decode('utf-8'))
+
+# db.yytestdb.insert_one(pointer)
 
 consumer.close()

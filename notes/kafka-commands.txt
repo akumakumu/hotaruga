@@ -43,7 +43,17 @@
 
 // CHANGING OFFSET SHIFTING
 /opt/kafka/bin/kafka-consumer-groups.sh \
---bootstrap-server localhost:9092 \
---group yy \
+--bootstrap-server 10.11.13.81:9092 \
+--group SONE_TRIGGER \
 --shift-by 1
 
+// Listing Consumer Group ID
+/opt/kafka/bin/kafka-consumer-groups.sh \
+--bootstrap-server 10.11.13.81:9092 \
+--list
+
+// Describe Consumer Group ID
+/opt/kafka/bin/kafka-consumer-groups.sh \
+--bootstrap-server 10.11.13.81:9092 \
+--describe \
+--group SONE_TRIGGER

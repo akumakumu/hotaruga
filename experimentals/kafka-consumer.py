@@ -21,14 +21,14 @@ consumer = KafkaConsumer(
     auto_offset_reset='earliest'
 )
 
-consumer.subscribe(['jsontest'])
+consumer.subscribe(['twitter'])
 
 message = next(consumer)
 
-print(message)
+# print(str(message.value.decode('utf-8')))
 
-# pointer = json.loads(message.value.decode('utf-8'))
+pointer = json.loads(message.value.decode('utf-8'))
 
-# db.yytestdb.insert_one(pointer)
+print(json.dumps(pointer))
 
 consumer.close()

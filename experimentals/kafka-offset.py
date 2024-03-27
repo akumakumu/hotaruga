@@ -1,6 +1,6 @@
 import kafka
 
-admin_client = kafka.KafkaAdminClient(bootstrap_servers=['localhost:9092'])
+admin_client = kafka.KafkaAdminClient(bootstrap_servers=['10.11.13.81:9092'])
 
 topic_list = admin_client.list_topics()
 
